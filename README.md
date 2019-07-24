@@ -15,6 +15,7 @@ so possible names that explains it and also brings you here from google search:
   <img src="https://github.com/BaselHorany/FadedRecyclerView/blob/master/showcase.gif?raw=true" />
 </p>
 
+
 ## Setup
 1- Add jitpack.io repositories to you project `build.gradle`
 ```groovy 
@@ -49,6 +50,7 @@ recyclerview.setVisibilityListener(new FadedRecyclerView.VisibilityListener() {
 
 ```
 
+## This lib uses AndroidX
 
 ## Author
 Basel Horany 
