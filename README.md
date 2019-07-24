@@ -19,9 +19,9 @@ so possible names that explains it and also brings you here from google search:
 1- Add jitpack.io repositories to you project `build.gradle`
 ```groovy 
 allprojects {
-	repositories {
-	    maven { url 'https://jitpack.io' }
-	}
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
 }
 ```
 2- Add it as a dependency to your app `build.gradle`
@@ -36,18 +36,17 @@ Just like how you would use a reqular RecyclerView that is why there is no sampl
 
 ```java
 
-	/*options*/
-	recyclerview.setMaskColor(initColor);// default black
-	recyclerview.setIsAggressive(false);//default true. if items should be dimmed aggressively
+/*options*/
+recyclerview.setMaskColor(initColor);// default black
+recyclerview.setIsAggressive(false);//default true. if items should be dimmed aggressively
 
-	//Listener
-  recyclerview.setVisibilityListener(new FadedRecyclerView.VisibilityListener() {
-      public void onVisibleChanged(int position, int visibilityPercentage) {
-          //ex: toast you are almost there! or deal again with that item 
-      }
-  });
+//Listener
+recyclerview.setVisibilityListener(new FadedRecyclerView.VisibilityListener() {
+    public void onVisibleChanged(int position, int visibilityPercentage) {
+      //ex: toast you are almost there! or deal again with that item 
+    }
+});
 
-}
 ```
 
 
