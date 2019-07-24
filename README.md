@@ -12,7 +12,7 @@ so possible names that explains it and also brings you here from google search:
 
 
 <p align="center">
-  <img src="https://github.com/BaselHorany/FadedRecyclerView/blob/master/showcase.gif?raw=true" />
+  <img src="https://github.com/BaselHorany/FadedRecyclerView/blob/master/showcase.webp?raw=true" />
 </p>
 
 
