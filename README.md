@@ -35,6 +35,13 @@ dependencies {
 ## Usage
 Just like how you would use a reqular RecyclerView that is why there is no sample app attached
 
+```xml
+<com.basel.FadedRecyclerView.FadedRecyclerView
+    android:id="@+id/rv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/>
+```
+
 ```java
 
 /*options*/
