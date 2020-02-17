@@ -27,7 +27,7 @@ allprojects {
 2- Add it as a dependency to your app `build.gradle`
 ```groovy
 dependencies {
-  compile 'com.github.BaselHorany:FadedRecyclerView:1.0.0'
+  compile 'com.github.BaselHorany:FadedRecyclerView:1.0.1'
 }
 ```
 
