@@ -6,9 +6,8 @@ focus on visible items and others faded depeinding on their visibility percentag
 
 Just like video playlist in facebook app
 so possible names that explains it and also brings you here from google search:
- * recyclerview hides items like facebook videos
- * fade recyclerview items
- * Alan Walker recyclerview ?
+ * night mode recyclerview
+ * fade recyclerview items on scroll
 
 
 <p align="center">
@@ -45,6 +44,7 @@ Just like how you would use a reqular RecyclerView that is why there is no sampl
 ```java
 
 /*options*/
+recyclerview.setFadeModeAlpha(true);//default fade mode is foreground overlay try both and use what you like.
 recyclerview.setMaskColor(initColor);// default black
 recyclerview.setIsAggressive(false);//default true. if items should be dimmed aggressively
 
