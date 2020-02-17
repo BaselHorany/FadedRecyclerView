@@ -32,7 +32,7 @@ public class FadedRecyclerView extends RecyclerView {
     }
 
     private LayoutManager layoutManger;
-    private boolean isVertical,isLinear,isAggressive;
+    private boolean isVertical,isLinear,isAggressive,isFadeModeAlpha;
     private Rect rvGlobalRect,rvLocalRect,itemBoundsRect;
     private int red,green,blue;
     private VisibilityListener vListener;
@@ -148,13 +148,13 @@ public class FadedRecyclerView extends RecyclerView {
     private void fadeView(int position, int visibilty) {
         tempViewHolder = findViewHolderForLayoutPosition(position);
         if(tempViewHolder!=null){//and it should not but..
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !isFadeModeAlpha) {
                 int transperancyColor = Color.argb(visibilty * 255 / 100, red, green, blue);
                 mColorDrawable = new ColorDrawable(transperancyColor);
                 tempViewHolder.itemView.setForeground(mColorDrawable);
             }else{
                 //ugly? & expensive!
-                tempViewHolder.itemView.setAlpha((float)(visibilty/100));
+                tempViewHolder.itemView.setAlpha((float)(100-visibilty)/100f);
             }
         }
     }
@@ -165,6 +165,10 @@ public class FadedRecyclerView extends RecyclerView {
 
     public void setVisibilityListener(VisibilityListener visibilityListener) {
         vListener = visibilityListener;
+    }
+
+    public void setFadeModeAlpha(boolean fadeModeAlpha) {
+        isFadeModeAlpha = fadeModeAlpha;
     }
 
 }
