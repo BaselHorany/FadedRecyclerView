@@ -27,7 +27,7 @@ allprojects {
 2- Add it as a dependency to your app `build.gradle`
 ```groovy
 dependencies {
-  compile 'com.github.BaselHorany:FadedRecyclerView:1.0.1'
+  compile 'com.github.BaselHorany:FadedRecyclerView:1.0.2'
 }
 ```
 
@@ -43,10 +43,15 @@ Just like how you would use a reqular RecyclerView that is why there is no sampl
 
 ```java
 
-/*options*/
-recyclerview.setFadeModeAlpha(true);//default fade mode is foreground overlay try both and use what you like.
-recyclerview.setMaskColor(initColor);// default black
-recyclerview.setIsAggressive(false);//default true. if items should be dimmed aggressively
+/*options*/ 
+//if your design prefer to not show the item under TabLayout, Toolbar or whatever is above the recyclerview.
+recyclerview.setPreventOverlapTop(true);
+//default fade mode is foreground overlay try both and use what you like.
+recyclerview.setFadeModeAlpha(true);
+//default black
+recyclerview.setMaskColor(initColor);
+//default true. if items should be dimmed aggressively
+recyclerview.setIsAggressive(false);
 
 //Listener
 recyclerview.setVisibilityListener(new FadedRecyclerView.VisibilityListener() {
