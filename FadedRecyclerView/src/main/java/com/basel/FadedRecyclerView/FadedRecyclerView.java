@@ -1,6 +1,5 @@
 package com.basel.FadedRecyclerView;
 
-
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Rect;
@@ -32,7 +31,7 @@ public class FadedRecyclerView extends RecyclerView {
     }
 
     private LayoutManager layoutManger;
-    private boolean isVertical,isLinear,isAggressive,isFadeModeAlpha;
+    private boolean isVertical,isLinear,isAggressive,isFadeModeAlpha,isPreventOverlapTop;
     private Rect rvGlobalRect,rvLocalRect,itemBoundsRect;
     private int red,green,blue;
     private VisibilityListener vListener;
@@ -136,6 +135,9 @@ public class FadedRecyclerView extends RecyclerView {
             }else {
                 visibilty = 100 - visibilty;
             }
+            if(isPreventOverlapTop&&visibilty!=0&&i==firstVisibleItem){
+                visibilty = 100;
+            }
             fadeView(i, visibilty);
             if(vListener!=null) {
                 vListener.onVisibleChanged(i,visibilty);
@@ -153,7 +155,6 @@ public class FadedRecyclerView extends RecyclerView {
                 mColorDrawable = new ColorDrawable(transperancyColor);
                 tempViewHolder.itemView.setForeground(mColorDrawable);
             }else{
-                //ugly? & expensive!
                 tempViewHolder.itemView.setAlpha((float)(100-visibilty)/100f);
             }
         }
@@ -170,5 +171,10 @@ public class FadedRecyclerView extends RecyclerView {
     public void setFadeModeAlpha(boolean fadeModeAlpha) {
         isFadeModeAlpha = fadeModeAlpha;
     }
+
+    public void setPreventOverlapTop(boolean preventOverlapTop) {
+        isPreventOverlapTop = preventOverlapTop;
+    }
+
 
 }
